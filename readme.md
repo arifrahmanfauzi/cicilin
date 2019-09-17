@@ -11,8 +11,13 @@
  - `git clone https://github.com/arifrahmanfauzi/cicilin.git`
  - buka cmd di dalam project Folder ketik -> `composer install`
  - setelah itu generate key `php artisan key:generate`
- - konfigurasi database di dalam file *.env* 
+ - konfigurasi database di dalam file *.env*
 
+### Cara menggunakan migration untuk buat table
+  - ketik `php artisan migrate`
+
+### Menggunakan Seeder untuk Dummy Data
+  - ketik `php artisan db:seed --class UserSeeder`
 
 ## About Laravel
 
