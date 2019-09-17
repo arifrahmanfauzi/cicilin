@@ -11,6 +11,18 @@
 - setelah di clone, lalu composer install setelah itu `php artisan key:generate` 
 - lalu checkout ke branch dev `git checkout dev`
 
+### Cara Instalasi awal Laravel Project !!!
+ - `git clone https://github.com/arifrahmanfauzi/cicilin.git`
+ - buka cmd di dalam project Folder ketik -> `composer install`
+ - setelah itu generate key `php artisan key:generate`
+ - konfigurasi database di dalam file *.env*
+
+### Cara menggunakan migration untuk buat table
+  - ketik `php artisan migrate`
+
+### Menggunakan Seeder untuk Dummy Data
+  - ketik `php artisan db:seed --class UserSeeder`
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
