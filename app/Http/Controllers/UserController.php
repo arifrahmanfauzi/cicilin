@@ -42,7 +42,8 @@ if ($validator->fails()) {
   $input = $request->all();
   $input['password'] = bcrypt($input['password']);
   $user = User::create($input);
-  $success['token'] =  $user->createToken('MyApp')-> accessToken;
+  $success['token'] =  $user->createToken('api_token')-> accessToken;
+  //$user->createToken('MyApp')-> accessToken;
   $success['name'] =  $user->name;
 
 return response()->json(['success'=>$success], $this-> successStatus);
