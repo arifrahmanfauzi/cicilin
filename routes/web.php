@@ -29,3 +29,7 @@ Route::get('/hdtuto', function() {
       dump($node->text());
     });
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
