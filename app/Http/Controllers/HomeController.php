@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Goutte\Client;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,17 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+
+    public function hdtuto(){
+
+        $client = new Client();
+    $crawler = $client('GET', 'https://www.bukalapak.com/products/?search=tas');
+
+    $crawler->filter('.c-product-card__name')->each(function ($node) {
+      print $node->text()."\n";
+    });
+     return view('welcome', ['data'=> $crawler]);
     }
 }

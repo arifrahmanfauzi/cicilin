@@ -12,20 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/hdtuto', function() {
-
-    $crawler = Goutte::request('GET', 'https://www.tokopedia.com/');
-
-    $crawler->filter('.blog-post-item h2 a')->each(function ($node) {
-
-      dump($node->text());
-
-    });
-
+    return view('dashboard');
 });
 
+Route::get('/hdtuto', 'HomeController@hdtuto');
+Route::get('/scrapper', 'ScrapperController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
