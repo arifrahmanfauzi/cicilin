@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
                         <div class="top-number">
-                            <p><i></i> Integrasi Aplikasi Korporasi</p>
+                            <p><i></i> Cicil Barang Sesuai Syariah</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-12">
