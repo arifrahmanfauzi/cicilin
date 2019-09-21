@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory;
-
+use App\User;
 
 class UserSeeder extends Seeder
 {
@@ -15,14 +15,24 @@ class UserSeeder extends Seeder
     {
         $faker = Faker\Factory::create('id_ID');
 
-        for ($i=0; $i <=10 ; $i++) {
-          // code...
-          DB::table('users')->insert([
-            'name' => $faker->name,
-            'email' =>$faker->email,
-            'password' => bcrypt('kebersamaan'),
-            'api_token' => bcrypt('token'),
-          ]);
+        for ($i=0; $i < 10; $i++) {
+            # code...
+            $user = User::create(
+             [   'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => bcrypt('kebersamaan'),
+                'id_role' => $faker->numberBetween(1,4),]
+            );
         }
+
+        // for ($i=0; $i <=10 ; $i++) {
+        //   // code...
+        //   DB::table('users')->insert([
+        //     'name' => $faker->name,
+        //     'email' => $faker->email,
+        //     'password' => bcrypt('kebersamaan'),
+        //     'id_role' => $faker->numberBetween(1,4),
+        //   ]);
+        // }
     }
 }
