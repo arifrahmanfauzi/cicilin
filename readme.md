@@ -43,7 +43,7 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 
 
 ## Screenshot
-![](Screenshot.PNG)
+![](ScreenShot.PNG)
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
