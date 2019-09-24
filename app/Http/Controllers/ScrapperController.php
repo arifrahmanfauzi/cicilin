@@ -12,11 +12,21 @@ class ScrapperController extends Controller
         // $crawler->filter('.product-description')->each(function ($node) {
         //   dump($node->text());
         // });
-        $crawler->filter('.product-description')->each(function ($node) {
-            dump($node->text());
-        });
-        return dd($crawler);
 
-        // return view('welcome');
+        $data [] = null;
+        // $crawler->filter('.product-description a')->each(function ($node) {
+        //     //dump($node->text());
+        //     //print $node->text()."\n" ;
+        //     //print $node->text()."\n";
+        //     //dd($node->text());
+        // });
+
+        $crawler->filter('.c-product-card__name')->each(function($node){
+            print $node->text();
+        });
+
+        // dd($crawler->text());
+            print $crawler->text() ;
+         //return view('welcome');
     }
 }
