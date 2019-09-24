@@ -20,7 +20,7 @@
   - ketik `php artisan db:seed --class UserSeeder`
 
 ## Screenshot
-![](Screenshot.PNG)
+![](ScreenShot.PNG)
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
