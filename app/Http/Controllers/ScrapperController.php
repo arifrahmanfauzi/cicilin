@@ -12,13 +12,52 @@ class ScrapperController extends Controller
 
     public $result = [];
 
+    public function post(Client $client, Request $req){
 
-    public function index(Client $client){
+        $product = $req->input('product');
+        //$product = "laptop";
+        $link = "https://www.bukalapak.com/products?utf8=%E2%9C%93&source=navbar&from=omnisearch&search_source=omnisearch_organic&search%5Bhashtag%5D=&search%5Bkeywords%5D=".$product;
+        $crawler = $client->request('GET', $link);
+        // $crawler = $client->request('GET', 'https://www.bukalapak.com/products?utf8=%E2%9C%93&source=navbar&from=omnisearch&search_source=omnisearch_organic&search%5Bhashtag%5D=&search%5Bkeywords%5D=sepatu');
+        //dd($crawler);
+        $inlineStyle = 'article'; //.product-description
+        $crawler->filter($inlineStyle)->each(function(Crawler $contactNode, $i) {
+           // $node = $contactNode->filter('a')->first();
+           // print $node->text().'<br>';
+        //    $divs = $contactNode->parents()->filter('div');
+        //     $section = $divs->eq(0);
+
+        //      dd($divs->html());
+            // $all = $contactNode->filter('a');
+            // print $all->text();
+            //dd($all->html());
+            //print $i;
+             $image = $contactNode->filter('img')->attr('data-src');
+
+           $productname = $contactNode->filter('.product__name')->first()->text();
+           $username = $contactNode->filter('.user__name')->filter('a')->first()->text();
+           $city = $contactNode->filter('.user-city__txt')->first()->text();
+           $price = $contactNode->filter('.product-price')->filter('.amount')->first()->text();
+
+           //print gettype($username);
+           //$parts = explode('Product Name',$productname);
+           $product = $this->extractProduct($i, $productname, $username, $city, $price, $image);
+            $this->result = $product;
+           //var_dump($product);
+           //print $price->text().'<br>';
+           //dd($productname->html());
+        });
+        //dd($this->result);
+       return view('dashboard')->with('data',$this->result);
+
+
+    }
+    public function index(Client $client, Request $req){
 
         $crawler = $client->request('GET', 'https://www.bukalapak.com/products?utf8=%E2%9C%93&source=navbar&from=omnisearch&search_source=omnisearch_organic&search%5Bhashtag%5D=&search%5Bkeywords%5D=sepatu');
         //dd($crawler);
         $inlineStyle = 'article'; //.product-description
-        $crawler->filter($inlineStyle)->each(function(Crawler $contactNode, $i) {
+       $data = $crawler->filter($inlineStyle)->each(function(Crawler $contactNode, $i) {
            // $node = $contactNode->filter('a')->first();
            // print $node->text().'<br>';
         //    $divs = $contactNode->parents()->filter('div');
@@ -39,13 +78,18 @@ class ScrapperController extends Controller
            //print gettype($username);
            //$parts = explode('Product Name',$productname);
            $product = $this->extractProduct($i, $productname, $username, $city, $price, $image);
+          //  print json_encode($product);
+          //  dd();
             $this->result = $product;
+            return $product;
            //var_dump($product);
            //print $price->text().'<br>';
            //dd($productname->html());
         });
+        //print_r($data[0]);
         //dd($this->result);
-       return view('dashboard')->with('data',$this->result);
+       //return view('dashboard')->with('data',$this->result);
+       return view('dashboard')->with('data',$data);
 
 
     }
