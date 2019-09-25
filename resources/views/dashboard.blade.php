@@ -160,6 +160,32 @@
         </a>
     </section>
     <!--/#main-slider-->
+    <section id="middle" class="skill-area" style="background-color: teal">
+        <div class="container">
+            <div class="center fadeInDown">
+                <h2>Result</h2>
+                <div class="owl-item active" style="width: 360px; margin-right: 30px; background-color: bisque; border-radius: 25px"><div class="single-slide">
+                    <div class="slide-img">
+                        <img src="images/client1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <img src="{{ $data['image'] }}" alt="">
+                        <h3>{{ $data['name'] }}</h3>
+                        <h3>{{ $data['username'] }}</h3>
+                        <h4>{{ $data['city'] }}</h4>
+                        <p style="color: black"><strong>{{ $data['price'] }}</strong></p>
+                    </div>
+                </div></div>
+
+                {{-- @foreach ($data as $item)
+                    <p>
+                        {{ dd($data['name']) }}
+                    </p>
+                    <p>{{ $item }}</p>
+                @endforeach --}}
+            </div>
+        </div>
+    </section>
 
     <section id="middle" class="skill-area" style="background-image: url({{ asset('/asset/images/black.jpg') }})">
         <div class="container">
