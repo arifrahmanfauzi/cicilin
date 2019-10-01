@@ -25,6 +25,9 @@ Route::get('/admin/list-permintaan', function () {
 
 Route::get('/hdtuto', 'HomeController@hdtuto');
 Route::get('/scrapper', 'ScrapperController@index');
-Route::post('/scrapper', 'ScrapperController@post');
-Auth::routes();
+Route::get('/scrapper/{id}', 'ScrapperController@post');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', 'ScrapperController@about');
+Route::get('scrap/{id}', 'ScrapperController@scrap');
+
+Auth::routes();

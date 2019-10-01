@@ -132,13 +132,12 @@
 
                                         </div>
                                         <br>
-                                        <form action="{{ url('/scrapper') }}" method="post">
-
+                                        <form action="/scrapper" method="post" >
+                                            @csrf
                                             <div class="form-group">
-
                                                 <input type="text" name="product" id="product" class="form-control" required="required">
                                             </div>
-                                            <button type="submit" class="btn-slide animation animated-item-3">Search</button>
+                                            <button type="submit" class="btn-slide animation animated-item-3" id="submit">Search</button>
                                         </form>
 
 
@@ -168,11 +167,6 @@
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Result</h2>
-
-
-
-
-
                 @foreach ($data as $item)
                 <div class="owl-item active" style="width: 360px; margin-right: 30px; background-color: bisque; border-radius: 25px"><div class="single-slide">
                 <div class="content">
@@ -182,10 +176,6 @@
                         <h4>{{ $item['city'] }}</h4>
                         <p style="color: black"><strong>{{ $item['price'] }}</strong></p>
                     </div>
-                {{-- <p>{{ $item['name'] }}</p> --}}
-                    {{-- @foreach ($item as $subitem)
-                        <p>{{ $item['name'] }}</p>
-                    @endforeach --}}
                 </div>
             </div>
                 @endforeach
@@ -323,90 +313,6 @@
     </section>
     <!--/#partner-->
 
-
-    <section id="bottom" class="skill-area" style="background-image: url(images/black.jpg)">
-
-        <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-2">
-                    <a href="#" class="footer-logo">
-
-                    </a>
-                </div>
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Company</h3>
-                                <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">We are hiring</a></li>
-                                    <li><a href="#">Meet the team</a></li>
-                                    <li><a href="#">Copyright</a></li>
-                                    <li><a href="#">Terms of use</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Support</h3>
-                                <ul>
-                                    <li><a href="#">Faq</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Forum</a></li>
-                                    <li><a href="#">Documentation</a></li>
-                                    <li><a href="#">Refund policy</a></li>
-                                    <li><a href="#">Ticket system</a></li>
-                                    <li><a href="#">Billing system</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Developers</h3>
-                                <ul>
-                                    <li><a href="#">Web Development</a></li>
-                                    <li><a href="#">SEO Marketing</a></li>
-                                    <li><a href="#">Theme</a></li>
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Email Marketing</a></li>
-                                    <li><a href="#">Plugin Development</a></li>
-                                    <li><a href="#">Article Writing</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Our Partners</h3>
-                                <ul>
-                                    <li><a href="#">Adipisicing Elit</a></li>
-                                    <li><a href="#">Eiusmod</a></li>
-                                    <li><a href="#">Tempor</a></li>
-                                    <li><a href="#">Veniam</a></li>
-                                    <li><a href="#">Exercitation</a></li>
-                                    <li><a href="#">Ullamco</a></li>
-                                    <li><a href="#">Laboris</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-    <!--/#bottom-->
-
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -432,6 +338,11 @@
     <script src="{{ asset('asset/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('asset/js/jquery.isotope.min.js') }}"></script>
     <script src="{{ asset('asset/js/main.js') }}"></script>
+    <script>
+    $(document).ready(function () {
+
+    });
+    </script>
 </body>
 
 </html>

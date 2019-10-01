@@ -30,12 +30,13 @@ class HomeController extends Controller
 
     public function hdtuto(){
 
-        $client = new Client();
+    $client = new Client();
     $crawler = $client('GET', 'https://www.bukalapak.com/products/?search=tas');
 
     $crawler->filter('.c-product-card__name')->each(function ($node) {
       print $node->text()."\n";
     });
-     return view('welcome', ['data'=> $crawler]);
+
+    return view('welcome', ['data'=> $crawler]);
     }
 }
