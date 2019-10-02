@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormModelsTable extends Migration
+class CreatePembayaransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateFormModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengajuan', function (Blueprint $table) {
+        Schema::create('pembayaran', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
-            $table->char('alamat');
-            $table->char('no_telp');
-            $table->integer('jangka_waktu');
+            $table->char('kode_cicilan');
+            $table->string('bank');
+            $table->string('no_rek');
+            $table->string('atas_nama');
+            $table->integer('nominal');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateFormModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('form_models');
+        Schema::dropIfExists('pembayarans');
     }
 }

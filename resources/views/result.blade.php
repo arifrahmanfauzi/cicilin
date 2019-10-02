@@ -165,7 +165,7 @@
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Result</h2>
-                {{-- @foreach ($data as $item)
+                @foreach ($data as $item)
                 <div class="owl-item active" style="width: 360px; margin-right: 30px; background-color: bisque; border-radius: 25px"><div class="single-slide">
                 <div class="content">
                         <img src="{{ $item['image'] }}" alt="">
@@ -176,7 +176,7 @@
                     </div>
                 </div>
             </div>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
     </section>

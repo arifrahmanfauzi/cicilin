@@ -20,7 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
-Route::post('details', 'UserController@details');});
+Route::post('details', 'UserController@details');
+});
 Route::get('scrap', 'ScrapperController@scrap');
 Route::post('/formPengajuan', 'FormController@FormPengajuan');
+Route::post('/postpembayaran', 'FormController@postPembayaran');
 
