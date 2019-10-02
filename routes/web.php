@@ -21,5 +21,11 @@ Route::get('/scrapper/{id}', 'ScrapperController@post');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'ScrapperController@about');
 Route::get('scrap/{id}', 'ScrapperController@scrap');
+Route::get('/services', function(){
+    return view('services');
+});
+Route::get('/pengajuan', function () {
+    return view('pengajuan');
+});
 
 Auth::routes();

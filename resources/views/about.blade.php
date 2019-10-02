@@ -81,12 +81,10 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">Tentang cicil.in</a></li>
-                        <li><a href="services.html">Bantuan</a></li>
-                        <li><a href="masuk.html">Masuk</a></li>
-                        <li><a href="daftar.html">Daftar</a></li>
-
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li class="active"><a href="{{ url('/about') }}">Tentang cicil.in</a></li>
+                        <li><a href="{{ url('/services') }}">Services</a></li>
+                        <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
                         <li class="dropdown">
                     </ul>
                 </div>
@@ -146,8 +144,9 @@ Demikian 5 poin yang kami bangun di cicil.in agar sesuai dengan syariah. Kami ak
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/about') }}">Tentang cicil.in</a></li>
+                        <li><a href="{{ url('/services') }}">Services</a></li>
                         <li><a href="#">Faq</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>

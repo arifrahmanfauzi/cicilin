@@ -81,12 +81,10 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">Tentang cicil.in</a></li>
-                        <li><a href="services.html">Bantuan</a></li>
-                        <li><a href="masuk.html">Masuk</a></li>
-                        <li><a href="daftar.html">Daftar</a></li>
-
+                        <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/about') }}">Tentang cicil.in</a></li>
+                        <li><a href="{{ url('/services') }}">Services</a></li>
+                        <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
                         <li class="dropdown">
                     </ul>
                 </div>
@@ -167,7 +165,7 @@
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Result</h2>
-                @foreach ($data as $item)
+                {{-- @foreach ($data as $item)
                 <div class="owl-item active" style="width: 360px; margin-right: 30px; background-color: bisque; border-radius: 25px"><div class="single-slide">
                 <div class="content">
                         <img src="{{ $item['image'] }}" alt="">
@@ -178,7 +176,7 @@
                     </div>
                 </div>
             </div>
-                @endforeach
+                @endforeach --}}
             </div>
         </div>
     </section>
