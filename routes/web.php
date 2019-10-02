@@ -12,16 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('form-pengajuan');
 });
+
+Route::get('/bayar', function () {
+    return view('form-pembayaran');
+});
+
+Route::get('/admin/list-permintaan', function () {
+    return view('list-permintaan');
+});
+
 Route::get('/hdtuto', function() {
-
     $crawler = Goutte::request('GET', 'https://www.tokopedia.com/');
-
     $crawler->filter('.blog-post-item h2 a')->each(function ($node) {
-
       dump($node->text());
-
     });
-
 });
