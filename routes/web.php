@@ -27,5 +27,6 @@ Route::get('/services', function(){
 Route::get('/pengajuan', function () {
     return view('pengajuan');
 });
+//endpoint form
 
 Auth::routes();
