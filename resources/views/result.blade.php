@@ -165,18 +165,20 @@
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Result</h2>
-                @foreach ($data as $item)
-                <div class="owl-item active" style="width: 360px; margin-right: 30px; background-color: bisque; border-radius: 25px"><div class="single-slide">
-                <div class="content">
-                        <img src="{{ $item['image'] }}" alt="">
-                        <h3>{{ $item['name'] }}</h3>
-                        <h3>{{ $item['username'] }}</h3>
-                        <h4>{{ $item['city'] }}</h4>
-                        <p style="color: black"><strong>{{ $item['price'] }}</strong></p>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    @foreach ($data as $item)
+                    <div class="owl-item active" style="width: 360px; margin-right: 30px; background-color: bisque; border-radius: 25px"><div class="single-slide">
+                    <div class="content">
+                            <img src="{{ $item['image'] }}" alt="">
+                            <h3>{{ $item['name'] }}</h3>
+                            <h3>{{ $item['username'] }}</h3>
+                            <h4>{{ $item['city'] }}</h4>
+                            <p style="color: black"><strong>{{ $item['price'] }}</strong></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>
