@@ -12,7 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('form-pengajuan');
+});
+
+Route::get('/bayar', function () {
+    return view('form-pembayaran');
+});
+
+Route::get('/admin/list-permintaan', function () {
+    return view('list-permintaan');
 });
 
 Route::get('/hdtuto', 'HomeController@hdtuto');

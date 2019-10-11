@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+# Gunakan Branch Dev
+- setelah di clone, lalu composer install setelah itu `php artisan key:generate` 
+- lalu checkout ke branch dev `git checkout dev`
+
 ### Cara Instalasi awal Laravel Project !!!
  - `git clone https://github.com/arifrahmanfauzi/cicilin.git`
  - buka cmd di dalam project Folder ketik -> `composer install`
